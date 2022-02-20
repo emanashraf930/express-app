@@ -21,10 +21,10 @@ const News = require('./tools/News')
 app.get('/', (req, res) => {
         News((error, articles) => {
             res.render('index', {
-                articles: articles,
-                title: articles.title,
-                urlToImage: articles.urlToImage,
-                content: articles.content
+                articles: articles
+                    // title: articles.title,
+                    // urlToImage: articles.urlToImage,
+                    // content: articles.content
             })
         })
 
