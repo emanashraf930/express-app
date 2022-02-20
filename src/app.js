@@ -19,13 +19,17 @@ const News = require('./tools/News')
 
 // console.log(News.articles)
 app.get('/', (req, res) => {
-    News((error, articles) => {
+        News((error, articles) => {
             res.render('index', {
-                articles
+                articles: articles,
+                title: articles.title,
+                urlToImage: articles.urlToImage,
+                content: articles.content
             })
         })
-        // console.log(articles)
-})
+
+    })
+    // console.log(urltoimage)
 
 // console.log(articles)
 app.listen(port, () => {

@@ -5,9 +5,9 @@ const News = (callback) => {
 
     request({ url: NewsApi, json: true }, (error, response) => {
 
-        console.log(response.body.articles)
-            // console.log(response.body.articles[0].title)
-            // console.log(response.body.articles[0].urlToImage)
+        // console.log(response.body.articles)
+        // console.log(response.body.articles[0].title)
+        // console.log(response.body.articles[0].urlToImage)
 
         if (error) {
             callback("error has occurred", undefined)
@@ -17,11 +17,11 @@ const News = (callback) => {
             callback(response.body.message, undefined)
         } else {
 
-            callback(undefined, {
-                articles: response.body.articles
-                    // title: response.body.articles.title,
-                    // urltoimage: response.body.articles.urlToImage
-            })
+            callback(undefined,
+                response.body.articles
+                // title: response.body.articles.title,
+                // urltoimage: response.body.articles.urlToImage
+            )
 
 
         }

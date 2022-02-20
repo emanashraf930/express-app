@@ -1,18 +1,18 @@
 {{#each articles}}
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 800px; margin:auto; margin-bottom:50px ">
     {{!-- {{img}}
     --}}
 
-    <div class="col-md-9">
-        <div class="card-body">
 
-            <img src="/images/header2.jpg" width="200px" height="200px">
+    <div class="card-body">
 
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
+        <img src={{urlToImage}} width="400px" height="300px" style="margin: auto;">
+
+        <h5 class="card-title">{{title}}</h5>
+        <p class="card-text">{{content}}</p>
+        {{!-- <h1> hello {{urlToImage}} </h1> --}}
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+
     </div>
 </div>
 {{/each}}
