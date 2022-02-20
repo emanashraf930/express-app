@@ -16,19 +16,18 @@ hbs.registerPartials(partialsPath)
 
 
 const News = require('./tools/News')
-News
+
 // console.log(News.articles)
 app.get('/', (req, res) => {
-
-        res.render('index', {
-            articles: req.query.articles
-                // auther: 'Yassin',
-                // urlToimage: 'hello'
-
-
+    News((error, articles) => {
+            res.render('index', {
+                articles
+            })
         })
-    })
-    // console.log(articles)
+        // console.log(articles)
+})
+
+// console.log(articles)
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })

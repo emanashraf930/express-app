@@ -1,13 +1,13 @@
 const request = require('request')
 const News = (callback) => {
-    const News = "https://newsapi.org/v2/top-headlines?country=us&apiKey=f0359b89d8864fc9be3cec27698daad4"
+    const NewsApi = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=f0359b89d8864fc9be3cec27698daad4'
 
 
-    request({ url: News, json: true }, (error, response) => {
+    request({ url: NewsApi, json: true }, (error, response) => {
 
-        // console.log(response.body.articles[0].author)
-        // console.log(response.body.articles[0].title)
-        // console.log(response.body.articles[0].urlToImage)
+        console.log(response.body.articles)
+            // console.log(response.body.articles[0].title)
+            // console.log(response.body.articles[0].urlToImage)
 
         if (error) {
             callback("error has occurred", undefined)
@@ -18,12 +18,9 @@ const News = (callback) => {
         } else {
 
             callback(undefined, {
-                articles: response.body.articles,
-                name: response.body.articles.author,
-                title: response.body.articles.title,
-                url: response.body.articles.urlToImage
-
-
+                articles: response.body.articles
+                    // title: response.body.articles.title,
+                    // urltoimage: response.body.articles.urlToImage
             })
 
 
